@@ -4,6 +4,10 @@ import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import AppBar from 'material-ui/AppBar';
 
+import Sidenav from './Sidenav/Sidenav';
+import Messages from './Messages/Messages';
+import MessageBox from './MessageBox/MessageBox'
+
 require('./app.scss');
 
 class App extends React.Component {
@@ -14,9 +18,16 @@ class App extends React.Component {
   render () {
     return (
       <MuiThemeProvider muiTheme={getMuiTheme()}>
-        <AppBar
-          title="React Workshop"
-        />
+        <div>
+          <AppBar
+            title="React Workshop"
+          />
+          <div className="layout">
+            <Sidenav />
+            <Messages />
+          </div>
+          <MessageBox />
+        </div>
       </MuiThemeProvider>
     );
   }
